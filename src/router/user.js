@@ -4,7 +4,7 @@ const handleUserRouter = (req, res) => {
   const path = url.split("?")[0]
 
   // Login
-  if (method === "POST" && path === "/api/user/login") {
+  if (method === "POST" && req.path === "/api/user/login") {
     return {
       msg: "this is api for login",
     }

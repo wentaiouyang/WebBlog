@@ -1,8 +1,16 @@
 const handleUserRouter = require("./src/router/user")
 const handleBlogRouter = require("./src/router/blog")
+const querystring = require("querystring")
 
 const serverHandle = (req, res) => {
   res.setHeader("Content-type", "application/json")
+
+  // get path
+  const url = req.url
+  req.path = url.split("?")[0]
+
+  // query
+  req.query = querystring.parse(url.split("?")[1])
 
   // handle blog router
   const blogData = handleBlogRouter(req, res)
