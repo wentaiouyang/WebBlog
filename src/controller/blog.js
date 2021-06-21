@@ -18,6 +18,19 @@ const getList = (author, keywork) => {
   ]
 }
 
+const getDetail = (id) => {
+  return [
+    {
+      id: 1,
+      title: "title1",
+      content: "content1",
+      createTime: 1624190643293,
+      author: "tom",
+    },
+  ]
+}
+
 module.exports = {
   getList,
+  getDetail,
 }
